@@ -51,3 +51,31 @@
             Console.ReadLine();
     }
 }
+
+
+ class Student
+    {
+        private int studentID;
+        private string studentName;
+        
+        // Static list to hold all students
+        public static List<Student> studentList = new List<Student>();
+
+        // Constructor to initialize a student and add them to the student list
+        public Student(int id, string name)
+        {
+            studentID = id;
+            studentName = name;
+            studentList.Add(this); // Adds the student object to the list
+        }
+
+        // Method to print the student's ID and Name
+        public void PrintInfo()
+        {
+            Console.WriteLine($"Student ID: {studentID}, Name: {studentName}");
+        }
+
+        // Properties to get the student details (ID and Name)
+        public int StudentID => studentID;
+        public string StudentName => studentName;
+    }
